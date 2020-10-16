@@ -13,6 +13,12 @@
 		413C14F92537F06B009A8716 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413C14F72537F06B009A8716 /* Main.storyboard */; };
 		413C14FB2537F17E009A8716 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 413C14FA2537F17D009A8716 /* Assets.xcassets */; };
 		413C14FE2537F17F009A8716 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413C14FC2537F17F009A8716 /* LaunchScreen.storyboard */; };
+		EC660BB4253951AA00ABD577 /* WorkoutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BB3253951AA00ABD577 /* WorkoutsTableViewController.swift */; };
+		EC660BB7253955D100ABD577 /* Ejercicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BB6253955D100ABD577 /* Ejercicio.swift */; };
+		EC660BBA253956BE00ABD577 /* Instruccion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BB9253956BE00ABD577 /* Instruccion.swift */; };
+		EC660BBD2539591D00ABD577 /* Rutina.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BBC2539591D00ABD577 /* Rutina.swift */; };
+		EC660BC025395B0100ABD577 /* WorkoutPreviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BBF25395B0100ABD577 /* WorkoutPreviewTableViewController.swift */; };
+		EC660BC325395B8100ABD577 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		413C14FA2537F17D009A8716 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		413C14FD2537F17F009A8716 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		413C14FF2537F17F009A8716 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC660BB3253951AA00ABD577 /* WorkoutsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsTableViewController.swift; sourceTree = "<group>"; };
+		EC660BB6253955D100ABD577 /* Ejercicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ejercicio.swift; sourceTree = "<group>"; };
+		EC660BB9253956BE00ABD577 /* Instruccion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruccion.swift; sourceTree = "<group>"; };
+		EC660BBC2539591D00ABD577 /* Rutina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rutina.swift; sourceTree = "<group>"; };
+		EC660BBF25395B0100ABD577 /* WorkoutPreviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPreviewTableViewController.swift; sourceTree = "<group>"; };
+		EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +70,14 @@
 			children = (
 				413C14F12537F06B009A8716 /* AppDelegate.swift */,
 				413C14F32537F06B009A8716 /* SceneDelegate.swift */,
+				EC660BB6253955D100ABD577 /* Ejercicio.swift */,
 				413C14F52537F06B009A8716 /* ViewController.swift */,
+				EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */,
+				EC660BB3253951AA00ABD577 /* WorkoutsTableViewController.swift */,
+				EC660BBF25395B0100ABD577 /* WorkoutPreviewTableViewController.swift */,
+				EC660BBC2539591D00ABD577 /* Rutina.swift */,
 				413C14F72537F06B009A8716 /* Main.storyboard */,
+				EC660BB9253956BE00ABD577 /* Instruccion.swift */,
 				413C14FA2537F17D009A8716 /* Assets.xcassets */,
 				413C14FC2537F17F009A8716 /* LaunchScreen.storyboard */,
 				413C14FF2537F17F009A8716 /* Info.plist */,
@@ -138,8 +156,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				413C14F62537F06B009A8716 /* ViewController.swift in Sources */,
+				EC660BBA253956BE00ABD577 /* Instruccion.swift in Sources */,
 				413C14F22537F06B009A8716 /* AppDelegate.swift in Sources */,
+				EC660BC325395B8100ABD577 /* ExercisesTableViewController.swift in Sources */,
 				413C14F42537F06B009A8716 /* SceneDelegate.swift in Sources */,
+				EC660BBD2539591D00ABD577 /* Rutina.swift in Sources */,
+				EC660BB4253951AA00ABD577 /* WorkoutsTableViewController.swift in Sources */,
+				EC660BC025395B0100ABD577 /* WorkoutPreviewTableViewController.swift in Sources */,
+				EC660BB7253955D100ABD577 /* Ejercicio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

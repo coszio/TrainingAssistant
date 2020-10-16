@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-260" y="-15"/>
         </scene>
-        <!--Workout Preview-->
+        <!--Routine Preview-->
         <scene sceneID="NOE-CW-92Z">
             <objects>
-                <tableViewController storyboardIdentifier="WorkoutPreview" title="Workout Preview" id="5fm-nY-dlq" customClass="WorkoutPreviewTableViewController" customModule="TrainingAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RoutinePreview" title="Routine Preview" id="5fm-nY-dlq" customClass="WorkoutPreviewTableViewController" customModule="TrainingAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GDa-a6-S4D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,6 @@
         <!--Exercises-->
         <scene sceneID="fNL-ps-n1q">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o8K-y0-raZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="Exercises" title="Exercises" id="7fA-no-Zhe" customClass="ExercisesTableViewController" customModule="TrainingAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ipt-CA-O84">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -81,6 +80,7 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8K-y0-raZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1836" y="94"/>
         </scene>
@@ -171,10 +171,10 @@
             </objects>
             <point key="canvasLocation" x="2545" y="468"/>
         </scene>
-        <!--Workouts-->
+        <!--Routines-->
         <scene sceneID="XDO-9L-6pK">
             <objects>
-                <tableViewController storyboardIdentifier="Workouts" title="Workouts" id="17X-yT-P6l" customClass="WorkoutsTableViewController" customModule="TrainingAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Routines" title="Routines" id="17X-yT-P6l" customClass="WorkoutsTableViewController" customModule="TrainingAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pYA-MN-u5Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

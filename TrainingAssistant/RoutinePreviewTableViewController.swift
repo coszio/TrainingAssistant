@@ -1,15 +1,15 @@
 //
-//  WorkoutsTableViewController.swift
+//  WorkoutPreviewTableViewController.swift
 //  TrainingAssistant
 //
-//  Created by user181023 on 10/15/20.
+//  Created by user181023 on 10/16/20.
 //
 
 import UIKit
 
-class WorkoutsTableViewController: UITableViewController {
+class RoutinePreviewTableViewController: UITableViewController {
 
-    var rutinas: [Rutina] = []
+    var unaRutina: Rutina!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +24,11 @@ class WorkoutsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return unaRutina.ejercicios.count
     }
 
     /*

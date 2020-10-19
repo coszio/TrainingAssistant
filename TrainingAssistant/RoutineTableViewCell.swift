@@ -11,6 +11,10 @@ class RoutineTableViewCell: UITableViewCell {
 
     @IBOutlet weak var card: UIView!
     
+    @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbSummary: UILabel!
+    @IBOutlet weak var lbFocus: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         card.clipsToBounds = true

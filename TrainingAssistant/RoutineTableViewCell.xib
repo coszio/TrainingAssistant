@@ -33,6 +33,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Arms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9A-1U-nMB">
+                                <rect key="frame" x="251" y="11" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -52,6 +59,9 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="card" destination="Sz1-ez-Zlt" id="gLr-s6-rUM"/>
+                <outlet property="lbFocus" destination="b9A-1U-nMB" id="QWj-b8-H78"/>
+                <outlet property="lbSummary" destination="SZU-sW-taM" id="ZOd-7w-zPl"/>
+                <outlet property="lbTitle" destination="scG-TQ-bI6" id="ZmT-P8-k8d"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="44.866071428571423"/>
         </tableViewCell>

@@ -9,7 +9,7 @@ import UIKit
 
 class RoutinesTableViewController: UITableViewController {
 
-    var rutinas: [Rutina] = []
+    //var rutinas: [Rutina] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,8 @@ class RoutinesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rutinas.count
+        return 0
+        //return rutinas.count
     }
 
     /*

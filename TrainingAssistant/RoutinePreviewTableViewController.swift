@@ -9,7 +9,7 @@ import UIKit
 
 class RoutinePreviewTableViewController: UITableViewController {
 
-    var unaRutina: Rutina!
+    //var unaRutina: Rutina!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,8 @@ class RoutinePreviewTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return unaRutina.ejercicios.count
+        //return unaRutina.ejercicios.count
+        return 0
     }
 
     /*

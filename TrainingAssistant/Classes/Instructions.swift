@@ -23,7 +23,7 @@ class Instructions : NSObject {
     var finalRestTime : TimeInterval
     var notes : String?
     
-    //More options
+    //Initialize instructions as a copy of another instructions
     init (_ ins : Instructions){
         self.isRepBased = ins.isRepBased
         self.reps = ins.reps
@@ -35,10 +35,8 @@ class Instructions : NSObject {
     }
     
     //Rep based initializer
-    init (_ exercise : Exercise, _ isRepBased : Bool, _ reps : Int,
-          _ sets : Int, _ restTime : TimeInterval, _ finalRestTime : TimeInterval,
-          _ notes : String?){
-        self.isRepBased = isRepBased
+    init (_ exercise: Exercise, _ reps: Int, _ sets: Int, _ restTime: TimeInterval, _ finalRestTime: TimeInterval, _ notes: String?){
+        self.isRepBased = true
         self.reps = reps
         self.sets = sets
         self.restTime = restTime
@@ -47,10 +45,8 @@ class Instructions : NSObject {
     }
     
     //Time based initializer
-    init (_ exercise : Exercise, _ isRepBased : Bool, _ time : TimeInterval,
-          _ sets : Int, _ restTime : TimeInterval, _ finalRestTime : TimeInterval,
-          _ notes : String?){
-        self.isRepBased = isRepBased
+    init (_ exercise: Exercise, _ time: TimeInterval, _ sets : Int, _ restTime: TimeInterval, _ finalRestTime: TimeInterval, _ notes: String?){
+        self.isRepBased = false
         self.time = time
         self.sets = sets
         self.restTime = restTime

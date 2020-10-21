@@ -59,7 +59,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="card" destination="Sz1-ez-Zlt" id="gLr-s6-rUM"/>
-                <outlet property="lbFocus" destination="b9A-1U-nMB" id="QWj-b8-H78"/>
+                <outlet property="lbGoal" destination="b9A-1U-nMB" id="QWj-b8-H78"/>
                 <outlet property="lbSummary" destination="SZU-sW-taM" id="ZOd-7w-zPl"/>
                 <outlet property="lbTitle" destination="scG-TQ-bI6" id="ZmT-P8-k8d"/>
             </connections>

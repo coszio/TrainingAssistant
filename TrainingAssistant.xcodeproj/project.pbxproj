@@ -21,6 +21,7 @@
 		EC660BC325395B8100ABD577 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */; };
 		EC6D7668253A11DB0091AA93 /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */; };
 		EC6D7669253A11DB0091AA93 /* RoutineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */; };
+		EC91829A2540C02000E6DB61 /* TrainingAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC9182982540C02000E6DB61 /* TrainingAssistant.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
 		EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
 		EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoutineTableViewCell.xib; sourceTree = "<group>"; };
+		EC9182992540C02000E6DB61 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */,
 				EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */,
 				EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */,
+				EC9182982540C02000E6DB61 /* TrainingAssistant.xcdatamodeld */,
 				EC660BB3253951AA00ABD577 /* RoutinesTableViewController.swift */,
 				EC660BBF25395B0100ABD577 /* RoutinePreviewTableViewController.swift */,
 				413C14F72537F06B009A8716 /* Main.storyboard */,
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC91829A2540C02000E6DB61 /* TrainingAssistant.xcdatamodeld in Sources */,
 				4EE23B5B2540A496002D6D35 /* Routine.swift in Sources */,
 				EC6D7668253A11DB0091AA93 /* RoutineTableViewCell.swift in Sources */,
 				413C14F22537F06B009A8716 /* AppDelegate.swift in Sources */,
@@ -328,6 +332,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TrainingAssistant/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,6 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TrainingAssistant/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,6 +385,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EC9182982540C02000E6DB61 /* TrainingAssistant.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC9182992540C02000E6DB61 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = EC9182992540C02000E6DB61 /* DataModel.xcdatamodel */;
+			path = TrainingAssistant.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 413C14E62537F06B009A8716 /* Project object */;
 }

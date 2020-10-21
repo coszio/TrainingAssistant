@@ -13,7 +13,7 @@ class RoutineTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbSummary: UILabel!
-    @IBOutlet weak var lbFocus: UILabel!
+    @IBOutlet weak var lbGoal: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

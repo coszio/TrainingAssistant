@@ -12,14 +12,14 @@ class Exercise: NSObject {
     var desc : String?
     var focus : String
     
-    //Something
+    //Initialize exercise as a copy of another exercise
     init (_ exercise : Exercise){
         self.name = exercise.name
         self.desc = exercise.desc
         self.focus = exercise.focus
     }
     
-    //Something
+    //Initialize exercise
     init (_ name : String, _ desc : String?, _ focus : String){
         self.name = name
         self.desc = desc

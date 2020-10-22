@@ -9,7 +9,7 @@ import UIKit
 
 class ExercisesTableViewController: UITableViewController {
 
-    //var ejercicios: [Ejercicio] = []
+    var exercises: [Exercise] = []
     //var ejerciciosEjemplo: [Ejercicio] = [Ejercicio(nombre: "Sentadillas", descripcion: "Bajar con la espalda recta hasta alcanzar 90 grados con las piernas y subir", url: nil), Ejercicio(nombre: "Lagartijas", descripcion: "Mantener las piernas y el torso alineados, bajar controladamente hasta que el pecho quede a 5 cm del suelo", url: nil)]
     
     override func viewDidLoad() {
@@ -30,15 +30,15 @@ class ExercisesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-        //return ejerciciosEjemplo.count
+    
+        return exercises.count
         
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "celdaEjercicio", for: indexPath)
-        //let indice = indexPath.row
-        //cell.textLabel?.text = ejerciciosEjemplo[indice].nombre
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath)
+        let idx = indexPath.row
+        cell.textLabel?.text = exercises[idx].name
+        cell.detailTextLabel?.text = exercises[idx].focus
         return cell
     }
 
@@ -50,17 +50,18 @@ class ExercisesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            exercises.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -87,4 +88,10 @@ class ExercisesTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func unwindToExerciseTable(_ unwindSegue: UIStoryboardSegue) {
+        let newExerciseView = unwindSegue.source as! NewExerciseViewController
+        
+        exercises.append(newExerciseView.addedExercise)
+        tableView.reloadData()
+    }
 }

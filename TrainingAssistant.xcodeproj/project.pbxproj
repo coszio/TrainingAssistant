@@ -22,6 +22,7 @@
 		EC6D7668253A11DB0091AA93 /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */; };
 		EC6D7669253A11DB0091AA93 /* RoutineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */; };
 		EC91829A2540C02000E6DB61 /* TrainingAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC9182982540C02000E6DB61 /* TrainingAssistant.xcdatamodeld */; };
+		EC9182C72540CF0D00E6DB61 /* NewExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9182C62540CF0D00E6DB61 /* NewExerciseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
 		EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoutineTableViewCell.xib; sourceTree = "<group>"; };
 		EC9182992540C02000E6DB61 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		EC9182C62540CF0D00E6DB61 /* NewExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExerciseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */,
 				EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */,
 				EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */,
+				EC9182C62540CF0D00E6DB61 /* NewExerciseViewController.swift */,
 				EC9182982540C02000E6DB61 /* TrainingAssistant.xcdatamodeld */,
 				EC660BB3253951AA00ABD577 /* RoutinesTableViewController.swift */,
 				EC660BBF25395B0100ABD577 /* RoutinePreviewTableViewController.swift */,
@@ -184,6 +187,7 @@
 				4EE23B51254094F4002D6D35 /* Exercise.swift in Sources */,
 				4EE23B5825409CB8002D6D35 /* ConfiguredExercise.swift in Sources */,
 				EC660BC025395B0100ABD577 /* RoutinePreviewTableViewController.swift in Sources */,
+				EC9182C72540CF0D00E6DB61 /* NewExerciseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,15 +17,14 @@
 		4E94611E254724B0002F74F1 /* RepBasedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94611C254724B0002F74F1 /* RepBasedVC.swift */; };
 		4E94611F254724B0002F74F1 /* RepBasedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E94611D254724B0002F74F1 /* RepBasedVC.xib */; };
 		4E94612225472573002F74F1 /* RoutineExerciseConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94612125472573002F74F1 /* RoutineExerciseConfigVC.swift */; };
-		4EE23B51254094F4002D6D35 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE23B50254094F4002D6D35 /* Exercise.swift */; };
-		4EE23B55254096C2002D6D35 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE23B54254096C2002D6D35 /* Instructions.swift */; };
-		4EE23B5825409CB8002D6D35 /* ConfiguredExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE23B5725409CB8002D6D35 /* ConfiguredExercise.swift */; };
-		4EE23B5B2540A496002D6D35 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE23B5A2540A496002D6D35 /* Routine.swift */; };
 		EC660BB4253951AA00ABD577 /* RoutinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BB3253951AA00ABD577 /* RoutinesTableViewController.swift */; };
-		EC660BC025395B0100ABD577 /* RoutinePreviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BBF25395B0100ABD577 /* RoutinePreviewTableViewController.swift */; };
 		EC660BC325395B8100ABD577 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */; };
 		EC6D7668253A11DB0091AA93 /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */; };
 		EC6D7669253A11DB0091AA93 /* RoutineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */; };
+		EC91829A2540C02000E6DB61 /* TrainingAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC9182982540C02000E6DB61 /* TrainingAssistant.xcdatamodeld */; };
+		EC9182C72540CF0D00E6DB61 /* NewExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9182C62540CF0D00E6DB61 /* NewExerciseViewController.swift */; };
+		ECD5FCBD254669220032F54C /* PreviewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD5FCBC254669220032F54C /* PreviewRoutineViewController.swift */; };
+		ECD5FCC0254670BB0032F54C /* ExecuteRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD5FCBF254670BB0032F54C /* ExecuteRoutineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,16 +39,15 @@
 		4E9461172547249B002F74F1 /* TimeBasedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeBasedVC.xib; sourceTree = "<group>"; };
 		4E94611C254724B0002F74F1 /* RepBasedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepBasedVC.swift; sourceTree = "<group>"; };
 		4E94611D254724B0002F74F1 /* RepBasedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepBasedVC.xib; sourceTree = "<group>"; };
-		4E94612125472573002F74F1 /* RoutineExerciseConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineExerciseConfigVC.swift; sourceTree = "<group>"; };
-		4EE23B50254094F4002D6D35 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		4EE23B54254096C2002D6D35 /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
-		4EE23B5725409CB8002D6D35 /* ConfiguredExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguredExercise.swift; sourceTree = "<group>"; };
-		4EE23B5A2540A496002D6D35 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		4E94612125472573002F74F1 /* RoutineExerciseConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineExerciseConfigVC.swift; sourceTree = "<group>"; }
 		EC660BB3253951AA00ABD577 /* RoutinesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesTableViewController.swift; sourceTree = "<group>"; };
-		EC660BBF25395B0100ABD577 /* RoutinePreviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinePreviewTableViewController.swift; sourceTree = "<group>"; };
 		EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
 		EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
 		EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoutineTableViewCell.xib; sourceTree = "<group>"; };
+		EC9182992540C02000E6DB61 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		EC9182C62540CF0D00E6DB61 /* NewExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExerciseViewController.swift; sourceTree = "<group>"; };
+		ECD5FCBC254669220032F54C /* PreviewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewRoutineViewController.swift; sourceTree = "<group>"; };
+		ECD5FCBF254670BB0032F54C /* ExecuteRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteRoutineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,14 +81,16 @@
 			isa = PBXGroup;
 			children = (
 				4E94611425472462002F74F1 /* Additional Views */,
-				4EE23B4F25409475002D6D35 /* Classes */,
 				413C14F12537F06B009A8716 /* AppDelegate.swift */,
 				413C14F32537F06B009A8716 /* SceneDelegate.swift */,
 				EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */,
 				EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */,
 				EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */,
+				ECD5FCBF254670BB0032F54C /* ExecuteRoutineViewController.swift */,
+				EC9182C62540CF0D00E6DB61 /* NewExerciseViewController.swift */,
+				ECD5FCBC254669220032F54C /* PreviewRoutineViewController.swift */,
+				EC9182982540C02000E6DB61 /* TrainingAssistant.xcdatamodeld */,
 				EC660BB3253951AA00ABD577 /* RoutinesTableViewController.swift */,
-				EC660BBF25395B0100ABD577 /* RoutinePreviewTableViewController.swift */,
 				413C14F72537F06B009A8716 /* Main.storyboard */,
 				4E94612125472573002F74F1 /* RoutineExerciseConfigVC.swift */,
 				413C14FA2537F17D009A8716 /* Assets.xcassets */,
@@ -117,17 +117,6 @@
 				4E94611D254724B0002F74F1 /* RepBasedVC.xib */,
 			);
 			path = ConfigureExercise;
-			sourceTree = "<group>";
-		};
-		4EE23B4F25409475002D6D35 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				4EE23B50254094F4002D6D35 /* Exercise.swift */,
-				4EE23B54254096C2002D6D35 /* Instructions.swift */,
-				4EE23B5725409CB8002D6D35 /* ConfiguredExercise.swift */,
-				4EE23B5A2540A496002D6D35 /* Routine.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,19 +192,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EE23B5B2540A496002D6D35 /* Routine.swift in Sources */,
+				EC91829A2540C02000E6DB61 /* TrainingAssistant.xcdatamodeld in Sources */,
 				EC6D7668253A11DB0091AA93 /* RoutineTableViewCell.swift in Sources */,
 				4E94611E254724B0002F74F1 /* RepBasedVC.swift in Sources */,
 				413C14F22537F06B009A8716 /* AppDelegate.swift in Sources */,
-				4EE23B55254096C2002D6D35 /* Instructions.swift in Sources */,
 				EC660BC325395B8100ABD577 /* ExercisesTableViewController.swift in Sources */,
 				4E9461182547249B002F74F1 /* TimeBasedVC.swift in Sources */,
-				413C14F42537F06B009A8716 /* SceneDelegate.swift in Sources */,
-				EC660BB4253951AA00ABD577 /* RoutinesTableViewController.swift in Sources */,
+        413C14F42537F06B009A8716 /* SceneDelegate.swift in Sources */,
 				4EE23B51254094F4002D6D35 /* Exercise.swift in Sources */,
 				4E94612225472573002F74F1 /* RoutineExerciseConfigVC.swift in Sources */,
 				4EE23B5825409CB8002D6D35 /* ConfiguredExercise.swift in Sources */,
 				EC660BC025395B0100ABD577 /* RoutinePreviewTableViewController.swift in Sources */,
+				ECD5FCBD254669220032F54C /* PreviewRoutineViewController.swift in Sources */,
+				ECD5FCC0254670BB0032F54C /* ExecuteRoutineViewController.swift in Sources */,
+				EC660BB4253951AA00ABD577 /* RoutinesTableViewController.swift in Sources */,
+				EC9182C72540CF0D00E6DB61 /* NewExerciseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TrainingAssistant/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -382,6 +374,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TrainingAssistant/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,6 +408,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EC9182982540C02000E6DB61 /* TrainingAssistant.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC9182992540C02000E6DB61 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = EC9182992540C02000E6DB61 /* DataModel.xcdatamodel */;
+			path = TrainingAssistant.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 413C14E62537F06B009A8716 /* Project object */;
 }

@@ -9,7 +9,9 @@ import UIKit
 
 class RoutinesTableViewController: UITableViewController {
 
-    //var rutinas: [Rutina] = []
+    var items: [Routine] = [Routine]()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +21,22 @@ class RoutinesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let nib = UINib(nibName: "routineCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "routineCell")
+        fetchRoutines()
     }
 
+    func fetchRoutines() {
+        
+        do {
+            items = try context.fetch(Routine.fetchRequest())
+            tableView.reloadData()
+        }
+        catch {
+            
+        }
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,19 +44,28 @@ class RoutinesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-        //return rutinas.count
+        return items.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "routineCell", for: indexPath) as! RoutineTableViewCell
+        let idx = indexPath.row
+        cell.lbTitle.text = items[idx].name
+        cell.lbGoal.text = items[idx].goal
+        
+        var summary: String = (items[idx].exercises?.allObjects[0] as! Exercise).name ?? ""
+        for n in 1...2 {
+            summary += ", "
+            summary += (items[idx].exercises?.allObjects[n] as! Exercise).name ?? ""
+        }
+        summary += "..."
+        
+        cell.lbSummary.text = summary
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -77,14 +102,25 @@ class RoutinesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "preview" {
+            // Get the new view controller using segue.destination.
+            let preview = segue.destination as! PreviewRoutineViewController
+            // Pass the selected object to the new view controller.
+            preview.routine = items[tableView.indexPathForSelectedRow!.row]
+        }
+        
     }
-    */
+    
+    @IBAction func unwindToRoutines(_ unwindSegue: UIStoryboardSegue) {
+        //let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
+        self.fetchRoutines()
+    }
 
 }

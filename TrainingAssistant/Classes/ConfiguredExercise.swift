@@ -8,11 +8,11 @@
 import Foundation
 
 class ConfiguredExercise : Exercise{
-    var overallSets : Int
-    var overallTime : TimeInterval
-    var instruction : Instructions
+    var overallSets: Int
+    var overallTime: TimeInterval
+    var instruction: Instructions
     
-    init(_ exercise : Exercise, _ instruction : Instructions){
+    init(_ exercise: Exercise, _ instruction: Instructions){
         self.overallSets = 0;
         self.overallTime = 0;
         self.instruction = instruction

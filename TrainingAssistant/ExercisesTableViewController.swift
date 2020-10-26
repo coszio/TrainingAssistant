@@ -74,7 +74,6 @@ class ExercisesTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
             //Which item to remove
             let itemToRemove = self.items[indexPath.row]
             
@@ -89,10 +88,15 @@ class ExercisesTableViewController: UITableViewController {
                 
             }
             
+            // Delete the row from the data source
+            items.remove(at: indexPath.row)
+            // This is in order to have an animation
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
             //Re-fetch the data
             self.fetchExercises()
-        }
-        else if editingStyle == .insert {
+            
+        } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }

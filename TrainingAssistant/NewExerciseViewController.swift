@@ -17,12 +17,14 @@ class NewExerciseViewController: UIViewController {
     @IBOutlet weak var btSaveAndConfigure: UIButton!
     
     var exercise: Exercise!
-    var addedExercise: Exercise!
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func quitaTeclado(_ sender: UITapGestureRecognizer) {
@@ -46,9 +48,12 @@ class NewExerciseViewController: UIViewController {
     }
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        addedExercise = Exercise(tfTitle.text!, tfDescription.text, tfFocus.text!)
-        // Pass the selected object to the new view controller.
+        
+        let newExercise = Exercise(context: self.context)
+        
+        newExercise.name = tfTitle.text!
+        newExercise.desc = tfDescription.text
+        newExercise.focus = tfFocus.text!
     }
     
 

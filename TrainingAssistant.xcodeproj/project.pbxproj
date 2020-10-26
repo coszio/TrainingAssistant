@@ -12,6 +12,11 @@
 		413C14F92537F06B009A8716 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413C14F72537F06B009A8716 /* Main.storyboard */; };
 		413C14FB2537F17E009A8716 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 413C14FA2537F17D009A8716 /* Assets.xcassets */; };
 		413C14FE2537F17F009A8716 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413C14FC2537F17F009A8716 /* LaunchScreen.storyboard */; };
+		4E9461182547249B002F74F1 /* TimeBasedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9461162547249B002F74F1 /* TimeBasedVC.swift */; };
+		4E9461192547249B002F74F1 /* TimeBasedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E9461172547249B002F74F1 /* TimeBasedVC.xib */; };
+		4E94611E254724B0002F74F1 /* RepBasedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94611C254724B0002F74F1 /* RepBasedVC.swift */; };
+		4E94611F254724B0002F74F1 /* RepBasedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E94611D254724B0002F74F1 /* RepBasedVC.xib */; };
+		4E94612225472573002F74F1 /* RoutineExerciseConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94612125472573002F74F1 /* RoutineExerciseConfigVC.swift */; };
 		EC660BB4253951AA00ABD577 /* RoutinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BB3253951AA00ABD577 /* RoutinesTableViewController.swift */; };
 		EC660BC325395B8100ABD577 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */; };
 		EC6D7668253A11DB0091AA93 /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */; };
@@ -30,6 +35,11 @@
 		413C14FA2537F17D009A8716 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		413C14FD2537F17F009A8716 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		413C14FF2537F17F009A8716 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E9461162547249B002F74F1 /* TimeBasedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBasedVC.swift; sourceTree = "<group>"; };
+		4E9461172547249B002F74F1 /* TimeBasedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeBasedVC.xib; sourceTree = "<group>"; };
+		4E94611C254724B0002F74F1 /* RepBasedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepBasedVC.swift; sourceTree = "<group>"; };
+		4E94611D254724B0002F74F1 /* RepBasedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepBasedVC.xib; sourceTree = "<group>"; };
+		4E94612125472573002F74F1 /* RoutineExerciseConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineExerciseConfigVC.swift; sourceTree = "<group>"; }
 		EC660BB3253951AA00ABD577 /* RoutinesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesTableViewController.swift; sourceTree = "<group>"; };
 		EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
 		EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
@@ -70,6 +80,7 @@
 		413C14F02537F06B009A8716 /* TrainingAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				4E94611425472462002F74F1 /* Additional Views */,
 				413C14F12537F06B009A8716 /* AppDelegate.swift */,
 				413C14F32537F06B009A8716 /* SceneDelegate.swift */,
 				EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */,
@@ -81,11 +92,31 @@
 				EC9182982540C02000E6DB61 /* TrainingAssistant.xcdatamodeld */,
 				EC660BB3253951AA00ABD577 /* RoutinesTableViewController.swift */,
 				413C14F72537F06B009A8716 /* Main.storyboard */,
+				4E94612125472573002F74F1 /* RoutineExerciseConfigVC.swift */,
 				413C14FA2537F17D009A8716 /* Assets.xcassets */,
 				413C14FC2537F17F009A8716 /* LaunchScreen.storyboard */,
 				413C14FF2537F17F009A8716 /* Info.plist */,
 			);
 			path = TrainingAssistant;
+			sourceTree = "<group>";
+		};
+		4E94611425472462002F74F1 /* Additional Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E94611525472470002F74F1 /* ConfigureExercise */,
+			);
+			path = "Additional Views";
+			sourceTree = "<group>";
+		};
+		4E94611525472470002F74F1 /* ConfigureExercise */ = {
+			isa = PBXGroup;
+			children = (
+				4E9461162547249B002F74F1 /* TimeBasedVC.swift */,
+				4E9461172547249B002F74F1 /* TimeBasedVC.xib */,
+				4E94611C254724B0002F74F1 /* RepBasedVC.swift */,
+				4E94611D254724B0002F74F1 /* RepBasedVC.xib */,
+			);
+			path = ConfigureExercise;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +180,8 @@
 				413C14FB2537F17E009A8716 /* Assets.xcassets in Resources */,
 				EC6D7669253A11DB0091AA93 /* RoutineTableViewCell.xib in Resources */,
 				413C14F92537F06B009A8716 /* Main.storyboard in Resources */,
+				4E94611F254724B0002F74F1 /* RepBasedVC.xib in Resources */,
+				4E9461192547249B002F74F1 /* TimeBasedVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,11 +194,17 @@
 			files = (
 				EC91829A2540C02000E6DB61 /* TrainingAssistant.xcdatamodeld in Sources */,
 				EC6D7668253A11DB0091AA93 /* RoutineTableViewCell.swift in Sources */,
+				4E94611E254724B0002F74F1 /* RepBasedVC.swift in Sources */,
 				413C14F22537F06B009A8716 /* AppDelegate.swift in Sources */,
 				EC660BC325395B8100ABD577 /* ExercisesTableViewController.swift in Sources */,
+				4E9461182547249B002F74F1 /* TimeBasedVC.swift in Sources */,
+        413C14F42537F06B009A8716 /* SceneDelegate.swift in Sources */,
+				4EE23B51254094F4002D6D35 /* Exercise.swift in Sources */,
+				4E94612225472573002F74F1 /* RoutineExerciseConfigVC.swift in Sources */,
+				4EE23B5825409CB8002D6D35 /* ConfiguredExercise.swift in Sources */,
+				EC660BC025395B0100ABD577 /* RoutinePreviewTableViewController.swift in Sources */,
 				ECD5FCBD254669220032F54C /* PreviewRoutineViewController.swift in Sources */,
 				ECD5FCC0254670BB0032F54C /* ExecuteRoutineViewController.swift in Sources */,
-				413C14F42537F06B009A8716 /* SceneDelegate.swift in Sources */,
 				EC660BB4253951AA00ABD577 /* RoutinesTableViewController.swift in Sources */,
 				EC9182C72540CF0D00E6DB61 /* NewExerciseViewController.swift in Sources */,
 			);

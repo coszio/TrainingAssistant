@@ -118,8 +118,9 @@ class RoutinesTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToRoutines(_ unwindSegue: UIStoryboardSegue) {
-        //let sourceViewController = unwindSegue.source
+        let sourceVC = unwindSegue.source as! ExercisesTableViewController
         // Use data from the view controller which initiated the unwind segue
+        
         self.fetchRoutines()
     }
 

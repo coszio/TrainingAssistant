@@ -23,6 +23,7 @@
 		EC6D7669253A11DB0091AA93 /* RoutineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */; };
 		EC91829A2540C02000E6DB61 /* TrainingAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC9182982540C02000E6DB61 /* TrainingAssistant.xcdatamodeld */; };
 		EC9182C72540CF0D00E6DB61 /* NewExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9182C62540CF0D00E6DB61 /* NewExerciseViewController.swift */; };
+		ECC58EF02548A5F8008CCC08 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC58EEF2548A5F8008CCC08 /* InstructionsViewController.swift */; };
 		ECD5FCBD254669220032F54C /* PreviewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD5FCBC254669220032F54C /* PreviewRoutineViewController.swift */; };
 		ECD5FCC0254670BB0032F54C /* ExecuteRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD5FCBF254670BB0032F54C /* ExecuteRoutineViewController.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoutineTableViewCell.xib; sourceTree = "<group>"; };
 		EC9182992540C02000E6DB61 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		EC9182C62540CF0D00E6DB61 /* NewExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExerciseViewController.swift; sourceTree = "<group>"; };
+		ECC58EEF2548A5F8008CCC08 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		ECD5FCBC254669220032F54C /* PreviewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewRoutineViewController.swift; sourceTree = "<group>"; };
 		ECD5FCBF254670BB0032F54C /* ExecuteRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteRoutineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,10 +85,9 @@
 				4E19691225476A0100A2996F /* Additional Views */,
 				413C14F12537F06B009A8716 /* AppDelegate.swift */,
 				413C14F32537F06B009A8716 /* SceneDelegate.swift */,
-				EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */,
-				EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */,
 				EC660BC225395B8100ABD577 /* ExercisesTableViewController.swift */,
 				ECD5FCBF254670BB0032F54C /* ExecuteRoutineViewController.swift */,
+				ECC58EEF2548A5F8008CCC08 /* InstructionsViewController.swift */,
 				EC9182C62540CF0D00E6DB61 /* NewExerciseViewController.swift */,
 				ECD5FCBC254669220032F54C /* PreviewRoutineViewController.swift */,
 				EC9182982540C02000E6DB61 /* TrainingAssistant.xcdatamodeld */,
@@ -103,6 +104,7 @@
 		4E19691225476A0100A2996F /* Additional Views */ = {
 			isa = PBXGroup;
 			children = (
+				ECC58EED254881FF008CCC08 /* Cells */,
 				4E19691325476A0100A2996F /* ConfigureExercise */,
 			);
 			path = "Additional Views";
@@ -117,6 +119,15 @@
 				4E19691725476A0100A2996F /* TimeBasedVC.xib */,
 			);
 			path = ConfigureExercise;
+			sourceTree = "<group>";
+		};
+		ECC58EED254881FF008CCC08 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC6D7666253A11DB0091AA93 /* RoutineTableViewCell.swift */,
+				EC6D7667253A11DB0091AA93 /* RoutineTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 				ECD5FCC0254670BB0032F54C /* ExecuteRoutineViewController.swift in Sources */,
 				413C14F42537F06B009A8716 /* SceneDelegate.swift in Sources */,
 				EC660BB4253951AA00ABD577 /* RoutinesTableViewController.swift in Sources */,
+				ECC58EF02548A5F8008CCC08 /* InstructionsViewController.swift in Sources */,
 				EC9182C72540CF0D00E6DB61 /* NewExerciseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

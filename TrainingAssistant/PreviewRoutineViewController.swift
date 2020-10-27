@@ -26,11 +26,12 @@ class PreviewRoutineViewController: UIViewController, UITableViewDataSource, UIT
     // MARK: Table View Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return routine.exercises!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "confExerciseCell", for: indexPath)
+        return cell
     }
     
     // MARK: - Navigation

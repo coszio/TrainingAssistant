@@ -9,7 +9,7 @@ import UIKit
 
 class RoutinesTableViewController: UITableViewController {
 
-    var items: [Routine] = [Routine]()
+    var routines: [Routine] = [Routine]()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -21,15 +21,15 @@ class RoutinesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        let nib = UINib(nibName: "routineCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "routineCell")
+        let nib = UINib(nibName: "RoutineTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "RoutineTableViewCell")
         fetchRoutines()
     }
 
     func fetchRoutines() {
         
         do {
-            items = try context.fetch(Routine.fetchRequest())
+            routines = try context.fetch(Routine.fetchRequest())
             tableView.reloadData()
         }
         catch {
@@ -37,6 +37,10 @@ class RoutinesTableViewController: UITableViewController {
         }
         
     }
+    
+    /** Concatenates the first three exercise names into a string
+    */
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,24 +48,23 @@ class RoutinesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return routines.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "routineCell", for: indexPath) as! RoutineTableViewCell
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RoutineTableViewCell", for: indexPath) as! RoutineTableViewCell
+        
         let idx = indexPath.row
-        cell.lbTitle.text = items[idx].name
-        cell.lbGoal.text = items[idx].goal
         
-        var summary: String = (items[idx].exercises?.allObjects[0] as! Exercise).name ?? ""
-        for n in 1...2 {
-            summary += ", "
-            summary += (items[idx].exercises?.allObjects[n] as! Exercise).name ?? ""
-        }
-        summary += "..."
+        cell.lbTitle.text = routines[idx].name
         
-        cell.lbSummary.text = summary
+        cell.lbGoal.text = routines[idx].goal
+        
+        cell.lbTotalTime.text = routines[idx].getTotalTime().toString()
+      
+        cell.lbSummary.text = routines[idx].makeSummaryStr()
         
         return cell
     }
@@ -112,16 +115,50 @@ class RoutinesTableViewController: UITableViewController {
             // Get the new view controller using segue.destination.
             let preview = segue.destination as! PreviewRoutineViewController
             // Pass the selected object to the new view controller.
-            preview.routine = items[tableView.indexPathForSelectedRow!.row]
+            preview.routine = routines[tableView.indexPathForSelectedRow!.row]
         }
         
     }
     
     @IBAction func unwindToRoutines(_ unwindSegue: UIStoryboardSegue) {
-        let sourceVC = unwindSegue.source as! ExercisesTableViewController
+        //let sourceVC = unwindSegue.source as! ExercisesTableViewController
         // Use data from the view controller which initiated the unwind segue
         
         self.fetchRoutines()
     }
 
+}
+
+extension Routine {
+    func getTotalTime() -> TimeInterval{
+        var totalTime: TimeInterval = 0
+        let exs = self.exercises!.array as! [ConfiguredExercise]
+        for ex in exs {
+            let inst = ex.instructions!
+            totalTime += Double(inst.sets) * inst.time
+            totalTime += Double(inst.sets - 1) * inst.restTime
+            totalTime += inst.finalRestTime
+        }
+        return totalTime
+    }
+    func makeSummaryStr() -> String {
+        let confExes = self.exercises!.array as! [ConfiguredExercise]
+        
+        let n: Int = confExes.count
+        if n <= 0 {
+            return "No exercises available"
+        }
+        var summary: String = confExes[0].exercise?.name! ?? ""
+        for i in 1...2 {
+            if i >= n {
+                break
+            }
+            summary += ", " + confExes[i].exercise!.name!
+        }
+        if n > 3 {
+            summary += "..."
+        }
+        
+        return summary
+    }
 }

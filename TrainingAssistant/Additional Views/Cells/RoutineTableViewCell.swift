@@ -12,6 +12,7 @@ class RoutineTableViewCell: UITableViewCell {
     @IBOutlet weak var card: UIView!
     
     @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbTotalTime: UILabel!
     @IBOutlet weak var lbSummary: UILabel!
     @IBOutlet weak var lbGoal: UILabel!
     

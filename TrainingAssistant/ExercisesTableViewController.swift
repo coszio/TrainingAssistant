@@ -12,7 +12,7 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
     @IBOutlet weak var btSave: UIBarButtonItem!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+    var routine: Routine!
     var exercises: [Exercise] = []
     var confExercises: [ConfiguredExercise] = []
     var routineName: String?
@@ -23,8 +23,9 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let nib = UINib(nibName: "ConfiguredExerciseTableViewCell", bundle: nil)
+        
         tableView.register(nib, forCellReuseIdentifier: "ConfiguredExerciseTableViewCell")
         
         fetchExercises()

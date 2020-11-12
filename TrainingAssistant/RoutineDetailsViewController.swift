@@ -12,9 +12,13 @@ class RoutineDetailsViewController: UIViewController {
     @IBOutlet weak var tfName: UITextField!
     @IBOutlet weak var tfGoal: UITextField!
     @IBOutlet weak var btSave: UIButton!
+    var name: String?
+    var goal: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         preferredContentSize = CGSize(width: 300, height: 200)
+        tfName.text = name
+        tfGoal.text = goal
     }
 
     // MARK: - Navigation

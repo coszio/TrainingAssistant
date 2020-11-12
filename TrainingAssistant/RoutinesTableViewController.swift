@@ -22,7 +22,7 @@ class RoutinesTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         let nib = UINib(nibName: "RoutineTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "RoutineTableViewCell")
+        tableView.register(nib, forCellReuseIdentifier: "routineCell")
         fetchRoutines()
     }
 
@@ -54,7 +54,7 @@ class RoutinesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RoutineTableViewCell", for: indexPath) as! RoutineTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "routineCell", for: indexPath) as! RoutineTableViewCell
         
         let idx = indexPath.row
         
@@ -105,6 +105,9 @@ class RoutinesTableViewController: UITableViewController {
     }
     */
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "preview", sender: self)
+    }
     
     // MARK: - Navigation
 

@@ -26,6 +26,10 @@ class RoutinesTableViewController: UITableViewController {
         fetchRoutines()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        fetchRoutines()
+    }
+    
     func fetchRoutines() {
         
         do {
@@ -127,7 +131,7 @@ class RoutinesTableViewController: UITableViewController {
         //let sourceVC = unwindSegue.source as! ExercisesTableViewController
         // Use data from the view controller which initiated the unwind segue
         
-        self.fetchRoutines()
+        //self.fetchRoutines()
     }
 
 }

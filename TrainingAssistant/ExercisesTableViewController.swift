@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExercisesTableViewController: UITableViewController, addInstructionsProtocol, UIPopoverPresentationControllerDelegate {
+class ExercisesTableViewController: UITableViewController, addInstructionsProtocol, editRoutineProtocol, UIPopoverPresentationControllerDelegate {
 
     @IBOutlet weak var btSave: UIBarButtonItem!
     
@@ -17,9 +17,9 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
     var confExercises: [ConfiguredExercise] = []
     var routineName: String?
     var routineGoal: String?
-    
-    let headers = ["New Routine", "Exercises"]
-    //var ejerciciosEjemplo: [Ejercicio] = [Ejercicio(nombre: "Sentadillas", descripcion: "Bajar con la espalda recta hasta alcanzar 90 grados con las piernas y subir", url: nil), Ejercicio(nombre: "Lagartijas", descripcion: "Mantener las piernas y el torso alineados, bajar controladamente hasta que el pecho quede a 5 cm del suelo", url: nil)]
+    var routineAux: Routine?
+    var edit: Bool = false
+    let headers = ["Routine", "Exercises"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,30 +138,57 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             //Which item to remove
-            let itemToRemove = self.exercises[indexPath.row]
-            
-            //Remove the item
-            self.context.delete(itemToRemove)
-            
-            //Save the data
-            do {
-                try self.context.save()
-            }
-            catch {
+            switch indexPath.section {
+            case 0:
+                let itemToRemove = self.confExercises[indexPath.row]
                 
+                //Remove the item
+                self.context.delete(itemToRemove)
+                
+                //Save the data
+                do {
+                    try self.context.save()
+                }
+                catch {
+                    
+                }
+                
+                // Delete the row from the data source
+                confExercises.remove(at: indexPath.row)
+                
+                // This is in order to have an animation and update the table
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                
+                break
+                
+            case 1:
+                let itemToRemove = self.exercises[indexPath.row]
+                
+                //Remove the item
+                self.context.delete(itemToRemove)
+                
+                //Save the data
+                do {
+                    try self.context.save()
+                }
+                catch {
+                    
+                }
+                
+                // Delete the row from the data source
+                exercises.remove(at: indexPath.row)
+                // This is in order to have an animation
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                
+                //Re-fetch the data
+                self.fetchExercises()
+                break
+            default:
+                break
             }
-            
-            // Delete the row from the data source
-            exercises.remove(at: indexPath.row)
-            // This is in order to have an animation
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            //Re-fetch the data
-            self.fetchExercises()
-            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     
 
@@ -189,6 +216,13 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
         confExercises.append(confEx)
         tableView.reloadData()
     }
+    func extractRoutineData(_ routine: Routine) {
+        confExercises = routine.exercises?.array as! [ConfiguredExercise]
+        routineName = routine.name
+        routineGoal = routine.goal
+        routineAux = routine
+        edit = true
+    }
     func adaptivePresentationStyle (for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
@@ -196,12 +230,15 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
     
     func insertRoutine() {
 //
-        let routine = Routine(context: self.context)
+        
+        let routine = edit ? routineAux! : Routine(context: self.context)
 //
         routine.name = routineName
 
         routine.goal = routineGoal
-
+        
+        routine.exercises = []
+        
         for confEx in confExercises {
             
             routine.addToExercises(confEx)
@@ -223,6 +260,10 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
         else if segue.identifier == "seguePopOver" {
             let vistaPopOver = segue.destination as! RoutineDetailsViewController
             vistaPopOver.popoverPresentationController!.delegate = self
+            if edit {
+                vistaPopOver.name = routineName
+                vistaPopOver.goal = routineGoal
+            }
         }
     }
 
@@ -238,8 +279,11 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
     @IBAction func unwindToSave(_ unwindSegue: UIStoryboardSegue) {
         //let sourceViewController = unwindSegue.source as! RoutineDetailsViewController
         insertRoutine()
-        performSegue(withIdentifier: "unwindToRoutines", sender: self)
-        
+        if edit {
+            performSegue(withIdentifier: "unwindToPreview", sender: self)
+        } else {
+            performSegue(withIdentifier: "unwindToRoutines", sender: self)
+        }
         // Use data from the view controller which initiated the unwind segue
     }
 }

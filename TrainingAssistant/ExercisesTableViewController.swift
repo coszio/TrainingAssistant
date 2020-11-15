@@ -295,6 +295,10 @@ extension TimeInterval {
         let hours = interval / (60 * 60)
         let minutes = (interval % (60 * 60)) / 60
         let secs = ((interval % (60 * 60)) % 60)
-        return String(format: "%02d:%02d:%02d", hours, minutes, secs)
+        if hours > 0 {
+            return String(format: "%02d:%02d:%02d", hours, minutes, secs)
+        } else {
+            return String(format: "%02d:%02d", minutes, secs)
+        }
     }
 }

@@ -87,8 +87,7 @@ class PreviewRoutineViewController: UIViewController, UITableViewDataSource, UIT
             let configView = segue.destination as! ExercisesTableViewController
             self.editDelegate = configView
             editDelegate.extractRoutineData(routine)
-        }        
-        
+        }
     }
     @IBAction func unwindToPreview(_ unwindSegue: UIStoryboardSegue) {
         //let source = unwindSegue.source as! ExercisesTableViewController

@@ -244,7 +244,11 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
             routine.addToExercises(confEx)
             
         }
-        
+        do{
+            try context.save()
+        } catch {
+          print("Could not save routine")
+        }
     }
     func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
         dismiss(animated: true, completion: nil)

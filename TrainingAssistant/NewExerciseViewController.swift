@@ -54,6 +54,12 @@ class NewExerciseViewController: UIViewController {
         newExercise.name = tfTitle.text!
         newExercise.desc = tfDescription.text
         newExercise.focus = tfFocus.text!
+        
+        do{
+            try context.save()
+        } catch {
+            print("Could not save exercise")
+        }
     }
     
 

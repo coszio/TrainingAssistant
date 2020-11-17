@@ -40,8 +40,19 @@ class ExecuteRoutineViewController: UIViewController {
     
     var schedule: [(Exercise, TimeInterval, String, Instructions, Int)] = []
     var currentStep: Int = 0
+    var currExercise: Int = 0
+    var exercises: [ConfiguredExercise] {
+        return routine.exercises!.array as! [ConfiguredExercise]
+    }
     var step: (Exercise,TimeInterval,String, Instructions, Int)? {
-        return schedule.indices.contains(currentStep) ? schedule[currentStep] : nil
+        let ex = routine.exercises!.array as! [ConfiguredExercise]
+        if let sched = ex.indices.contains(currExercise) ? ex[currExercise].steps : nil {
+            
+            return sched.indices.contains(currentStep) ? sched[currentStep] : nil
+        }
+        print("No exercise at index %i",currExercise)
+        
+        return nil
     }
     var timeLeft: TimeInterval = 0
     var timer = Timer()
@@ -51,9 +62,7 @@ class ExecuteRoutineViewController: UIViewController {
         super.viewDidLoad()
         defaults.setValue(10.0, forKey: "prepareTime") //temporal
         
-        for confEx in routine.exercises!.array as! [ConfiguredExercise] {
-            schedule += confEx.generateSchedule()
-        }
+        indicatorCard.layer.cornerRadius = 10
         
         executeWorkout()
         // Do any additional setup after loading the view.
@@ -95,11 +104,57 @@ class ExecuteRoutineViewController: UIViewController {
         }
     }
 
+    func advanceExercise(_ amount: Int) {
+        
+        var realAmount = amount
+        
+        if amount < 0 && currentStep > 0 {
+            currentStep = 0
+            realAmount += 1
+        }
+        
+        currExercise += realAmount
+        
+        if currExercise < 0 {
+            //do nothing
+            currExercise = 0
+        }
+        else if currExercise >= exercises.count {
+            currExercise = exercises.count - 1
+            //end workout
+            timer.invalidate()
+            //terminate execution
+            //go to log
+        }
+        else {
+            currentStep = 0
+            updateToCurrentStep()
+        }
+    }
     func advanceSteps(_ amount: Int) {
         //go to next step
         currentStep += amount
         
+        if currentStep < 0 {
+            //go to prev exercise
+            advanceExercise(-1)
+            
+            //set current step to the last
+            currentStep = exercises[currExercise].steps.count - 1
+            updateToCurrentStep()
+        }
+        
         //is there a next step?
+        else if currentStep >= exercises[currExercise].steps.count{
+            advanceExercise(1)
+        }
+        
+        else{
+            // it is within the same exercise
+            updateToCurrentStep()
+        }
+    }
+    func updateToCurrentStep() {
         if step != nil {
             if step!.2 == "Work" && step!.3.isRepBased { // it is a rep based exercise
                 timeLeft = 1000000000
@@ -111,13 +166,6 @@ class ExecuteRoutineViewController: UIViewController {
             }
             //update screen
             updateAllLabels()
-        }
-        else {
-            //there are no steps left
-            timer.invalidate()
-            //terminate execution
-            
-            //go to log
         }
     }
     func updateAllLabels() {
@@ -189,29 +237,11 @@ class ExecuteRoutineViewController: UIViewController {
     }
     
     @IBAction func nextExerciseTap(_ sender: UIButton) {
-        //figure out how many steps are required to advance
-        //let stepRightNow = currentStep
-        repeat {
-            if step != nil{
-                currentStep += 1
-            } else {
-                //end workout
-            }
-        } while step!.2 != "Prepare"
-        advanceSteps(0)
+        advanceExercise(1)
     }
     
     @IBAction func prevExercise(_ sender: UIButton) {
-        //figure out how many steps are needed to move
-        repeat {
-            if step != nil {
-                currentStep -= 1
-            } else {
-                //
-            }
-        } while step!.2 != "Prepare"
-        advanceSteps(0)
-        
+        advanceExercise(-1)
     }
     
     /*
@@ -226,7 +256,7 @@ class ExecuteRoutineViewController: UIViewController {
 
 }
 extension ConfiguredExercise {
-    func generateSchedule() -> [(Exercise, TimeInterval, String, Instructions, Int)] {
+    var steps: [(Exercise, TimeInterval, String, Instructions, Int)] {
         let defaults = UserDefaults()
         var sched: [(Exercise, TimeInterval, String, Instructions, Int)] = []
         sched.append((self.exercise!,defaults.double(forKey: "prepareTime"), "Prepare", self.instructions!, -1))

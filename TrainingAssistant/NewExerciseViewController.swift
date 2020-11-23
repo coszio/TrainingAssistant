@@ -17,6 +17,7 @@ class NewExerciseViewController: UIViewController {
     @IBOutlet weak var btSaveAndConfigure: UIButton!
     
     var exercise: Exercise!
+    var addToconfExDelegate: addInstructionsProtocol!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -57,8 +58,14 @@ class NewExerciseViewController: UIViewController {
         
         do{
             try context.save()
+            exercise = newExercise
         } catch {
             print("Could not save exercise")
+        }
+        if segue.identifier == "saveAndConfigure" {
+            let vistaConfig = segue.destination as! InstructionsViewController
+            vistaConfig.exercise = exercise
+            vistaConfig.delegate = addToconfExDelegate
         }
     }
     

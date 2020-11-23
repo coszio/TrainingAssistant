@@ -19,7 +19,7 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
     var routineGoal: String?
     var routineAux: Routine?
     var edit: Bool = false
-    let headers = ["Routine", "Exercises"]
+    let headers = ["Routine", "Existing Exercises"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -209,10 +209,10 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
 
     //MARK: - Protocols
     
-    func addInstructions(_ instructions: Instructions) {
+    func addInstructions(_ instructions: Instructions, _ exercise: Exercise) {
         let confEx = ConfiguredExercise(context: context)
         confEx.instructions = instructions
-        confEx.exercise = exercises[tableView.indexPathForSelectedRow!.row]
+        confEx.exercise = exercise//s[tableView.indexPathForSelectedRow!.row]
         confExercises.append(confEx)
         tableView.reloadData()
     }
@@ -260,6 +260,11 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
         if segue.identifier == "configure" {
             let vistaInstruc = segue.destination as! InstructionsViewController
             vistaInstruc.delegate = self
+            vistaInstruc.exercise = exercises[tableView.indexPathForSelectedRow!.row]
+        }
+        else if segue.identifier == "newExercise" {
+            let vistaNewExercise = segue.destination as! NewExerciseViewController
+            vistaNewExercise.addToconfExDelegate = self
         }
         else if segue.identifier == "seguePopOver" {
             let vistaPopOver = segue.destination as! RoutineDetailsViewController
@@ -275,9 +280,8 @@ class ExercisesTableViewController: UITableViewController, addInstructionsProtoc
         //let newExerciseView = unwindSegue.source as! NewExerciseViewController
         if unwindSegue.identifier == "Configure" {
             //let vistaConf = unwindSegue.source as! InstructionsViewController
-            
-            tableView.reloadData()
         }
+        tableView.reloadData()
         fetchExercises()
     }
     @IBAction func unwindToSave(_ unwindSegue: UIStoryboardSegue) {

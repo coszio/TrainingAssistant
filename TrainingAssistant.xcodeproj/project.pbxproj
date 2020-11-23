@@ -12,11 +12,8 @@
 		413C14F92537F06B009A8716 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413C14F72537F06B009A8716 /* Main.storyboard */; };
 		413C14FB2537F17E009A8716 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 413C14FA2537F17D009A8716 /* Assets.xcassets */; };
 		413C14FE2537F17F009A8716 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413C14FC2537F17F009A8716 /* LaunchScreen.storyboard */; };
-		4E19691825476A0100A2996F /* RepBasedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E19691425476A0100A2996F /* RepBasedVC.xib */; };
-		4E19691925476A0100A2996F /* RepBasedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19691525476A0100A2996F /* RepBasedVC.swift */; };
-		4E19691A25476A0100A2996F /* TimeBasedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19691625476A0100A2996F /* TimeBasedVC.swift */; };
-		4E19691B25476A0100A2996F /* TimeBasedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E19691725476A0100A2996F /* TimeBasedVC.xib */; };
-		4E19691E25476A2700A2996F /* RoutineExerciseConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19691D25476A2700A2996F /* RoutineExerciseConfigVC.swift */; };
+		EC003E622566D94400957199 /* countdownfinishSFX.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC003E602566D94400957199 /* countdownfinishSFX.wav */; };
+		EC003E632566D94400957199 /* countdownSFX.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC003E612566D94400957199 /* countdownSFX.wav */; };
 		EC093F09254F2DB500797B26 /* ConfiguredExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC093F07254F2DB500797B26 /* ConfiguredExerciseTableViewCell.swift */; };
 		EC093F0A254F2DB500797B26 /* ConfiguredExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC093F08254F2DB500797B26 /* ConfiguredExerciseTableViewCell.xib */; };
 		EC660BB4253951AA00ABD577 /* RoutinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC660BB3253951AA00ABD577 /* RoutinesTableViewController.swift */; };
@@ -39,11 +36,8 @@
 		413C14FA2537F17D009A8716 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		413C14FD2537F17F009A8716 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		413C14FF2537F17F009A8716 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E19691425476A0100A2996F /* RepBasedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepBasedVC.xib; sourceTree = "<group>"; };
-		4E19691525476A0100A2996F /* RepBasedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepBasedVC.swift; sourceTree = "<group>"; };
-		4E19691625476A0100A2996F /* TimeBasedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeBasedVC.swift; sourceTree = "<group>"; };
-		4E19691725476A0100A2996F /* TimeBasedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeBasedVC.xib; sourceTree = "<group>"; };
-		4E19691D25476A2700A2996F /* RoutineExerciseConfigVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineExerciseConfigVC.swift; sourceTree = "<group>"; };
+		EC003E602566D94400957199 /* countdownfinishSFX.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = countdownfinishSFX.wav; sourceTree = SOURCE_ROOT; };
+		EC003E612566D94400957199 /* countdownSFX.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = countdownSFX.wav; sourceTree = SOURCE_ROOT; };
 		EC093F07254F2DB500797B26 /* ConfiguredExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguredExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		EC093F08254F2DB500797B26 /* ConfiguredExerciseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfiguredExerciseTableViewCell.xib; sourceTree = "<group>"; };
 		EC660BB3253951AA00ABD577 /* RoutinesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesTableViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +93,7 @@
 				ECD5FCBC254669220032F54C /* PreviewRoutineViewController.swift */,
 				EC9182982540C02000E6DB61 /* TrainingAssistant.xcdatamodeld */,
 				EC660BB3253951AA00ABD577 /* RoutinesTableViewController.swift */,
-				4E19691D25476A2700A2996F /* RoutineExerciseConfigVC.swift */,
+				EC003E5F2566D91100957199 /* Sounds */,
 				413C14F72537F06B009A8716 /* Main.storyboard */,
 				413C14FA2537F17D009A8716 /* Assets.xcassets */,
 				413C14FC2537F17F009A8716 /* LaunchScreen.storyboard */,
@@ -112,20 +106,17 @@
 			isa = PBXGroup;
 			children = (
 				ECC58EED254881FF008CCC08 /* Cells */,
-				4E19691325476A0100A2996F /* ConfigureExercise */,
 			);
 			path = "Additional Views";
 			sourceTree = "<group>";
 		};
-		4E19691325476A0100A2996F /* ConfigureExercise */ = {
+		EC003E5F2566D91100957199 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				4E19691425476A0100A2996F /* RepBasedVC.xib */,
-				4E19691525476A0100A2996F /* RepBasedVC.swift */,
-				4E19691625476A0100A2996F /* TimeBasedVC.swift */,
-				4E19691725476A0100A2996F /* TimeBasedVC.xib */,
+				EC003E602566D94400957199 /* countdownfinishSFX.wav */,
+				EC003E612566D94400957199 /* countdownSFX.wav */,
 			);
-			path = ConfigureExercise;
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		ECC58EED254881FF008CCC08 /* Cells */ = {
@@ -199,9 +190,9 @@
 				413C14FE2537F17F009A8716 /* LaunchScreen.storyboard in Resources */,
 				413C14FB2537F17E009A8716 /* Assets.xcassets in Resources */,
 				EC6D7669253A11DB0091AA93 /* RoutineTableViewCell.xib in Resources */,
-				4E19691B25476A0100A2996F /* TimeBasedVC.xib in Resources */,
 				EC093F0A254F2DB500797B26 /* ConfiguredExerciseTableViewCell.xib in Resources */,
-				4E19691825476A0100A2996F /* RepBasedVC.xib in Resources */,
+				EC003E632566D94400957199 /* countdownSFX.wav in Resources */,
+				EC003E622566D94400957199 /* countdownfinishSFX.wav in Resources */,
 				413C14F92537F06B009A8716 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,11 +206,8 @@
 			files = (
 				EC91829A2540C02000E6DB61 /* TrainingAssistant.xcdatamodeld in Sources */,
 				EC6D7668253A11DB0091AA93 /* RoutineTableViewCell.swift in Sources */,
-				4E19691925476A0100A2996F /* RepBasedVC.swift in Sources */,
 				413C14F22537F06B009A8716 /* AppDelegate.swift in Sources */,
 				EC660BC325395B8100ABD577 /* ExercisesTableViewController.swift in Sources */,
-				4E19691E25476A2700A2996F /* RoutineExerciseConfigVC.swift in Sources */,
-				4E19691A25476A0100A2996F /* TimeBasedVC.swift in Sources */,
 				ECD5FCBD254669220032F54C /* PreviewRoutineViewController.swift in Sources */,
 				ECD5FCC0254670BB0032F54C /* ExecuteRoutineViewController.swift in Sources */,
 				EC093F09254F2DB500797B26 /* ConfiguredExerciseTableViewCell.swift in Sources */,

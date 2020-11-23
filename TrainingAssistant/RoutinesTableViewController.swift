@@ -82,17 +82,37 @@ class RoutinesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            let itemToRemove = self.routines[indexPath.row]
+            
+            //Remove the item
+            self.context.delete(itemToRemove)
+            
+            //Save the data
+            do {
+                try self.context.save()
+            }
+            catch {
+                
+            }
+            
+            // Delete the row from the data source
+            routines.remove(at: indexPath.row)
+            // This is in order to have an animation
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            //Re-fetch the data
+            self.fetchRoutines()
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

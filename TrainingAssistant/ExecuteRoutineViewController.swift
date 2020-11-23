@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ExecuteRoutineViewController: UIViewController {
 
@@ -35,6 +36,8 @@ class ExecuteRoutineViewController: UIViewController {
     @IBOutlet weak var btNextExercise: UIButton!
     
     @IBOutlet weak var lbSeries: UILabel!
+    
+    var audioPlayer: AVAudioPlayer?
     
     var startTime: Date?
     
@@ -97,10 +100,12 @@ class ExecuteRoutineViewController: UIViewController {
                 lbTotalTime.text = (-startTime!.timeIntervalSinceNow).toString()
             } else {
                 //timer hits 0
+                playSound(soundName: "countdownfinishSFX")
                 advanceSteps(1)
             }
         if 1...3 ~= timeLeft {
-            //TODO: play leadingSFX
+            //play leadingSFX
+            playSound(soundName: "countdownSFX")
         }
     }
 
@@ -189,7 +194,7 @@ class ExecuteRoutineViewController: UIViewController {
         
         tvNotes.text = step!.3.note
         
-        lbTotalTime.text = startTime?.timeIntervalSinceNow.toString()
+        lbTotalTime.text = (-startTime!.timeIntervalSinceNow).toString()
         
         switch step!.2 {
         case "Prepare":
@@ -199,7 +204,7 @@ class ExecuteRoutineViewController: UIViewController {
             indicatorCard.backgroundColor = .green
             break
         case "Rest":
-            indicatorCard.backgroundColor = .blue
+            indicatorCard.backgroundColor = UIColor(red: 0.55, green: 0.6, blue: 1, alpha: 1)
             break
         case "Cooldown":
             indicatorCard.backgroundColor = .lightGray
@@ -207,8 +212,8 @@ class ExecuteRoutineViewController: UIViewController {
         default:
             break
         }
-        
-        lbSeries.text = String(format: "% / %", step!.4, step!.3.sets)
+        view.backgroundColor = indicatorCard.backgroundColor?.withAlphaComponent(0.3)
+        lbSeries.text = String(format: "%i / %i", step!.4, step!.3.sets)
         
     }
     
@@ -243,7 +248,20 @@ class ExecuteRoutineViewController: UIViewController {
     @IBAction func prevExercise(_ sender: UIButton) {
         advanceExercise(-1)
     }
-    
+    func playSound(soundName: String) {
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "wav") else {
+            print("url not found")
+            return
+        }
+
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.volume = 0.8
+            audioPlayer?.play()
+        } catch {
+            print("Could not play audio " + soundName)
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -259,14 +277,15 @@ extension ConfiguredExercise {
     var steps: [(Exercise, TimeInterval, String, Instructions, Int)] {
         let defaults = UserDefaults()
         var sched: [(Exercise, TimeInterval, String, Instructions, Int)] = []
-        sched.append((self.exercise!,defaults.double(forKey: "prepareTime"), "Prepare", self.instructions!, -1))
-        
+        sched.append((self.exercise!,defaults.double(forKey: "prepareTime"), "Prepare", self.instructions!, 1))
+        	
         for i in 1..<self.instructions!.sets {
             sched.append((self.exercise!,self.instructions!.time, "Work", self.instructions!, Int(i)))
             sched.append((self.exercise!,self.instructions!.restTime, "Rest", self.instructions!, Int(i)))
         }
         sched.append((self.exercise!,self.instructions!.time, "Work", self.instructions!, Int(self.instructions!.sets)))
-        sched.append((self.exercise!,self.instructions!.finalRestTime, "Cooldown", self.instructions!, -1))
+        sched.append((self.exercise!,self.instructions!.finalRestTime, "Cooldown", self.instructions!, Int(self.instructions!.sets)))
         return sched
     }
+
 }

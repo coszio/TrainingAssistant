@@ -89,7 +89,7 @@
                             <constraint firstItem="3dM-jk-pgi" firstAttribute="trailing" secondItem="WXh-5N-xjd" secondAttribute="trailing" constant="3" id="yZQ-FI-9Ea"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ndA-d8-PDr"/>
+                    <navigationItem key="navigationItem" title="Preview Routine" id="ndA-d8-PDr"/>
                     <connections>
                         <outlet property="lbGoal" destination="Jue-gN-Pht" id="UpR-8H-GjW"/>
                         <outlet property="lbTitle" destination="w2P-Cf-HWL" id="GQ4-kR-8TA"/>
@@ -286,7 +286,9 @@
                             <constraint firstItem="4qo-cP-Fja" firstAttribute="top" secondItem="fsH-rO-pRh" secondAttribute="bottom" constant="4" id="zSc-PU-bq6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Jty-ca-WCG"/>
+                    <navigationItem key="navigationItem" title="Workout" id="Jty-ca-WCG">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="EZR-7o-Nfw"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="btNextExercise" destination="5Cb-aZ-ujj" id="cqj-4F-zra"/>
                         <outlet property="btNextStep" destination="ZLM-Dd-ec8" id="j1R-uZ-Xmk"/>
@@ -335,36 +337,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Routine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgz-fd-xb1">
-                                <rect key="frame" x="52" y="35" width="121" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Routine name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgz-Yi-Mhx">
-                                <rect key="frame" x="34" y="62" width="232" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Goal of this routine" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jdq-6P-p9E">
-                                <rect key="frame" x="34" y="104" width="232" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ak-ZJ-yGb">
-                                <rect key="frame" x="12" y="150" width="90" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save Routine"/>
-                                <connections>
-                                    <segue destination="gKA-tr-EaJ" kind="unwind" unwindAction="unwindToSave:" id="8fb-ho-3md"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="wKS-fR-odf">
+                                <rect key="frame" x="20" y="30" width="260" height="145"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Routine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgz-fd-xb1">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="26.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Routine name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgz-Yi-Mhx">
+                                        <rect key="frame" x="0.0" y="33.5" width="260" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Goal of this routine" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jdq-6P-p9E">
+                                        <rect key="frame" x="0.0" y="74" width="260" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ak-ZJ-yGb">
+                                        <rect key="frame" x="0.0" y="115" width="260" height="30"/>
+                                        <state key="normal" title="Save Routine"/>
+                                        <connections>
+                                            <segue destination="gKA-tr-EaJ" kind="unwind" unwindAction="unwindToSave:" id="8fb-ho-3md"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ajE-xu-LxB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ajE-xu-LxB" firstAttribute="bottom" secondItem="wKS-fR-odf" secondAttribute="bottom" constant="25" id="Ial-dF-0qA"/>
+                            <constraint firstItem="wKS-fR-odf" firstAttribute="top" secondItem="ajE-xu-LxB" secondAttribute="top" constant="30" id="RWr-1A-ULd"/>
+                            <constraint firstItem="ajE-xu-LxB" firstAttribute="trailing" secondItem="wKS-fR-odf" secondAttribute="trailing" constant="20" id="mYu-Ti-usz"/>
+                            <constraint firstItem="wKS-fR-odf" firstAttribute="leading" secondItem="ajE-xu-LxB" secondAttribute="leading" constant="20" id="xJe-ag-181"/>
+                        </constraints>
                     </view>
                     <size key="freeformSize" width="300" height="200"/>
                     <connections>
@@ -642,6 +651,9 @@
                             <constraint firstItem="YsB-Uu-lWo" firstAttribute="top" secondItem="bFk-7m-dDy" secondAttribute="top" constant="41" id="QoY-oW-Hc4"/>
                             <constraint firstItem="bFk-7m-dDy" firstAttribute="trailing" secondItem="J2e-aU-t9E" secondAttribute="trailing" constant="28" id="cjp-Eu-5Gb"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="QfQ-HH-Qgp" appends="YES" id="y5z-B6-hW0"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Configure Exercise" id="jpD-1X-gxc">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="iHT-lj-4Gb">
@@ -661,6 +673,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jmi-ZO-xzF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QfQ-HH-Qgp">
+                    <connections>
+                        <action selector="viewTapped:" destination="RER-aw-5tu" id="hEN-Ie-fOw"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <exit id="xGP-yb-Rdz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2924" y="425.93703148425789"/>
@@ -831,7 +848,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Cus-r8-CMq"/>
+        <segue reference="9Ol-k4-cti"/>
         <segue reference="mdh-tQ-xye"/>
     </inferredMetricsTieBreakers>
     <resources>

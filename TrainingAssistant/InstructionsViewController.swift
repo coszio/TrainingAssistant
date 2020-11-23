@@ -66,6 +66,9 @@ class InstructionsViewController: UIViewController, UIPickerViewDataSource, UIPi
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     @IBAction func timeRepsChanged(_ sender: UISegmentedControl) {
         isRepBased = sender.selectedSegmentIndex == 0
         pickerWork.reloadAllComponents()

@@ -7,7 +7,7 @@
 
 import UIKit
 protocol addInstructionsProtocol {
-    func addInstructions(_ instructions: Instructions)
+    func addInstructions(_ instructions: Instructions, _ exercise: Exercise)
 }
 class InstructionsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -15,6 +15,10 @@ class InstructionsViewController: UIViewController, UIPickerViewDataSource, UIPi
     //var instructions: Instructions!
     var selectedIdx: Int!
     var delegate: addInstructionsProtocol!
+    
+    var exercise: Exercise!
+    
+    @IBOutlet weak var lbExercise: UILabel!
     
     @IBOutlet weak var scTimeReps: UISegmentedControl!
     
@@ -25,6 +29,7 @@ class InstructionsViewController: UIViewController, UIPickerViewDataSource, UIPi
     @IBOutlet weak var tfNotes: UITextField!
     
     var isRepBased: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let pickers = [pickerWork, pickerRest, pickerSets, pickerCoolDown]
@@ -57,13 +62,10 @@ class InstructionsViewController: UIViewController, UIPickerViewDataSource, UIPi
 //        pickerRest.selectRow(20, inComponent: 2, animated: false)
 //        pickerSets.selectRow(4, inComponent: 0, animated: false)
 //        pickerCoolDown.selectRow(1, inComponent: 1, animated: false)
+        lbExercise.text = exercise.name
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func doneTapped(_ sender: UIButton) {
-        delegate.addInstructions(collectFromScreen())
-        navigationController?.popViewController(animated: true)
-    }
     @IBAction func timeRepsChanged(_ sender: UISegmentedControl) {
         isRepBased = sender.selectedSegmentIndex == 0
         pickerWork.reloadAllComponents()
@@ -170,21 +172,11 @@ class InstructionsViewController: UIViewController, UIPickerViewDataSource, UIPi
     
     
     // MARK: - Navigation
-
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        //TODO: Check that worktime is not 0
-        return true
-    }
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        //let vistaEleccion = segue.destination as! ExercisesTableViewController
-        
-        // Pass the selected object to the new view controller.
-        //instructions = collectFromScreen()
-//        let instructions = collectFromScreen()
-//        delegate.addInstructions(instructions)
-        
+        if segue.identifier == "saveConfiguration" {
+            delegate.addInstructions(collectFromScreen(), exercise)
+        }
     }
     
 

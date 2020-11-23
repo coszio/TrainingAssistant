@@ -126,10 +126,11 @@ class ExecuteRoutineViewController: UIViewController {
         }
         else if currExercise >= exercises.count {
             currExercise = exercises.count - 1
-            //end workout
-            timer.invalidate()
             //terminate execution
+            timer.invalidate()
+            
             //go to log
+            endWorkout()
         }
         else {
             currentStep = 0
@@ -248,6 +249,9 @@ class ExecuteRoutineViewController: UIViewController {
     @IBAction func prevExercise(_ sender: UIButton) {
         advanceExercise(-1)
     }
+    func endWorkout() {
+        performSegue(withIdentifier: "log workout", sender: self)
+    }
     func playSound(soundName: String) {
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "wav") else {
             print("url not found")
@@ -262,15 +266,20 @@ class ExecuteRoutineViewController: UIViewController {
             print("Could not play audio " + soundName)
         }
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
+        if segue.identifier == "log workout" {
+            let vistaLog = segue.destination as! LogViewController
+            vistaLog.routine = routine
+            vistaLog.totalDuration = -startTime!.timeIntervalSinceNow
+        }
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
 extension ConfiguredExercise {

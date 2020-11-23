@@ -22,8 +22,8 @@
     </entity>
     <entity name="Log" representedClassName="Log" syncable="YES" codeGenerationType="class">
         <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" defaultDateTimeInterval="599558520" usesScalarValueType="NO"/>
         <attribute name="execution" attributeType="Double" minValueString="0" maxValueString="1" defaultValueString="1" usesScalarValueType="YES"/>
-        <attribute name="fecha" optional="YES" attributeType="Date" defaultDateTimeInterval="599558520" usesScalarValueType="NO"/>
         <attribute name="intensity" attributeType="Double" minValueString="0" maxValueString="1" defaultValueString="0.7" usesScalarValueType="YES"/>
         <attribute name="totalDuration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="routine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Routine"/>

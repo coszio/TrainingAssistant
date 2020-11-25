@@ -162,7 +162,11 @@ extension Routine {
         let exs = self.exercises!.array as! [ConfiguredExercise]
         for ex in exs {
             let inst = ex.instructions!
-            totalTime += Double(inst.sets) * inst.time
+            if inst.isRepBased {
+                totalTime += Double(inst.sets) * Double(inst.reps) * 2.0
+            } else {
+                totalTime += Double(inst.sets) * inst.time
+            }
             totalTime += Double(inst.sets - 1) * inst.restTime
             totalTime += inst.finalRestTime
         }

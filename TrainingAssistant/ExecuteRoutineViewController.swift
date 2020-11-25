@@ -48,7 +48,7 @@ class ExecuteRoutineViewController: UIViewController {
         return routine.exercises!.array as! [ConfiguredExercise]
     }
     var step: (Exercise,TimeInterval,String, Instructions, Int)? {
-        let ex = routine.exercises!.array as! [ConfiguredExercise]
+        let ex = routine.exercises?.array as! [ConfiguredExercise]
         if let sched = ex.indices.contains(currExercise) ? ex[currExercise].steps : nil {
             
             return sched.indices.contains(currentStep) ? sched[currentStep] : nil

@@ -835,6 +835,13 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Routines" id="OZl-Dw-wun"/>
                     <navigationItem key="navigationItem" title="Routines" id="0G4-l6-HEr">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="info.circle" catalog="system" id="O49-OD-AsW">
+                            <connections>
+                                <segue destination="WpY-b4-Fvp" kind="popoverPresentation" popoverAnchorBarButtonItem="O49-OD-AsW" id="ngZ-HJ-DKZ">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="DfH-m5-Y9k">
                             <connections>
                                 <segue destination="7fA-no-Zhe" kind="show" identifier="newRoutine" id="e89-cV-jbr"/>
@@ -846,6 +853,57 @@
             </objects>
             <point key="canvasLocation" x="922" y="-75"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="owl-M8-kVQ">
+            <objects>
+                <viewController id="WpY-b4-Fvp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vyw-kI-KWD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-Or-ePl">
+                                <rect key="frame" x="60" y="228.5" width="255" height="190.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training Assistant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEm-nV-6sm">
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="33.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created with love during iOS Development Project TC2024" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPY-oY-JqW">
+                                        <rect key="frame" x="0.0" y="58.5" width="255" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFf-F1-dTi">
+                                        <rect key="frame" x="0.0" y="124.5" width="255" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luis Cossio &amp; Alejandro Myrick" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQr-bl-8su">
+                                        <rect key="frame" x="0.0" y="170" width="255" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dAH-fg-0Ks"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="h0L-Or-ePl" secondAttribute="trailing" constant="60" id="4WF-62-ilF"/>
+                            <constraint firstItem="h0L-Or-ePl" firstAttribute="leading" secondItem="dAH-fg-0Ks" secondAttribute="leading" constant="60" id="Mkx-wb-jmD"/>
+                            <constraint firstItem="h0L-Or-ePl" firstAttribute="centerY" secondItem="vyw-kI-KWD" secondAttribute="centerY" id="wDo-bz-IXy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qpf-Kf-ysd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="502" y="-759"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="9Ol-k4-cti"/>
@@ -856,6 +914,7 @@
         <image name="chevron.forward.2" catalog="system" width="128" height="105"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="light.max" catalog="system" width="128" height="72"/>
         <image name="light.min" catalog="system" width="128" height="74"/>
         <image name="pause.circle.fill" catalog="system" width="128" height="121"/>
